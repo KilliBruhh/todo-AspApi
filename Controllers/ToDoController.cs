@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AspApi.Models;
+using AspApi.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspApi.Controllers
@@ -12,27 +13,25 @@ namespace AspApi.Controllers
     public class ToDoController : ControllerBase
     {
 
-        List<Todo> todolist = new List<Todo>();
+        private readonly IRepo _repo;
 
-        public ToDoController() 
+        public ToDoController(IRepo repo) 
         {
-            todolist.Add(new Todo(){Id=1,Title="Bakker",DueDate = new DateTime(2023, 12, 4), Priority=1});
-            todolist.Add(new Todo(){Id=1,Title="Brouwer",DueDate = new DateTime(2023, 12, 3), Priority=2});
-            todolist.Add(new Todo(){Id=1,Title="Monique",DueDate = new DateTime(2023, 12, 2), Priority=4});
-            todolist.Add(new Todo(){Id=1,Title="Sjotten",DueDate = new DateTime(2023, 12, 1), Priority=5});
+            _repo = repo;
         }
 
 
         [HttpGet]
         public ActionResult GetAllTodo()
         {
-            return Ok(todolist);            // Methot exists in ContollerBase class
+            return Ok(_repo.GetAllTodo());
         } 
 
-        [HttpPost]
-        public ActionResult GetTodoById()
+        [HttpGet("{id}")]
+        public ActionResult GetTodoById(int id)
         {
-            return Ok("Post");
+            return Ok(_repo.GetTodoById(id));
         }
+
     }
 }
