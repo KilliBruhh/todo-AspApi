@@ -23,6 +23,11 @@ namespace AspApi.Repositories
             todolist.Add(t);
         }
 
+        public void DeleteTodo(Todo t)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Todo> GetAllTodo() {
             return todolist;
         }
@@ -32,6 +37,11 @@ namespace AspApi.Repositories
         }
 
         public void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateTodo(Todo t)
         {
             throw new NotImplementedException();
         }

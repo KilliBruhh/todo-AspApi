@@ -14,6 +14,7 @@ namespace AspApi.Mappings
         {
             CreateMap<Todo, TodoReadDto>();
             CreateMap<TodoWriteDto, Todo>();
+            CreateMap<TodoUpdateDto, Todo>();
         }
     }
 }
