@@ -104,3 +104,5 @@ C:\Users\Killi\OneDrive\Documenten\School\Fase 4\c# .net\Project\AspApi\bin\Debu
 C:\Users\Killi\OneDrive\Documenten\School\Fase 4\c# .net\Project\AspApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Killi\OneDrive\Documenten\School\Fase 4\c# .net\Project\AspApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Killi\OneDrive\Documenten\School\Fase 4\c# .net\Project\AspApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Killi\OneDrive\Documenten\School\Fase 4\c# .net\Project\AspApi\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Killi\OneDrive\Documenten\School\Fase 4\c# .net\Project\AspApi\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

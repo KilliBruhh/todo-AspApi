@@ -10,6 +10,11 @@ namespace AspApi.Repositories
     {
         IEnumerable<Todo> GetAllTodo();
         Todo GetTodoById(int id);
+        void AddTodo(Todo t);
+        void SaveChanges();
+        void UpdateTodo(Todo t);
+        void DeleteTodo(Todo t);
+
 
     }
 }
