@@ -17,6 +17,6 @@ namespace AspApi.Context
         }
 
         public DbSet<Todo> Todos { get; set; }
-
+    
     }
 }
