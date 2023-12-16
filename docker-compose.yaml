@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  todo-api:
+    build: ./AspApi
+    container_name: todo-api
+    ports:
+      -8000:80
+    
+  todo-db:
+    image: mysql
+    container_name: odo-mysql
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_DATABASE=todo
+    volumes:
+    - ./mysqldata:/var/lib/mysql
+
+  myshop-migration:
+    build:
+      context: ./myshop_csproj
+      #specify name of dockerfile
+      dockerfile: Dockerfile.migration
+    container_name: todo-migration
+    tty: true
+  
