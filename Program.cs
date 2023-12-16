@@ -1,6 +1,8 @@
 using AspApi.Context;
 using AspApi.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using AspApi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,9 +15,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IRepo, MysqlRepo>();
 
 string _conectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
+string _conectionString2 = builder.Configuration["ConnectionStrings:TodoDb"];
 
-builder.Services.AddDbContext<TodoContext>(opt => opt.UseMySql(_conectionString, ServerVersion.AutoDetect(_conectionString)));
 
+// builder.Services.AddDbContext<TodoContext>(opt => opt.UseMySql(_conectionString, ServerVersion.AutoDetect(_conectionString)));
+builder.Services.AddDbContext<TodoContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("TodoDb")));
+    
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
@@ -26,7 +32,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 // app.UseHttpsRedirection();
 
 app.UseAuthorization();
